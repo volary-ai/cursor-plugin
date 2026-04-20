@@ -24,8 +24,10 @@ import { loadConfig, requireConfig } from "../lib/config.js";
 
 function formatRootIndex(entries) {
   if (!entries || entries.length === 0) {
-    return "The root memory index of reflections from the volary memory system is currently empty. " +
-        "There is no need to use the recall tool this session - in future sessions it will be populated.";
+    return (
+      "The root memory index of reflections from the volary memory system is currently empty. " +
+      "There is no need to use the recall tool this session - in future sessions it will be populated."
+    );
   }
   const preamble =
     "The following is the root memory index of reflections from the volary memory system. " +
