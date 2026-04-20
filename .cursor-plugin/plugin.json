@@ -1,0 +1,17 @@
+{
+  "name": "volary",
+  "displayName": "Volary",
+  "description": "Adds Volary's memory layer to Cursor agents.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Volary"
+  },
+  "homepage": "https://volary.ai",
+  "repository": "https://github.com/volary-ai/cursor",
+  "license": "Apache-2.0",
+  "keywords": ["volary", "memory", "reflections", "transcripts"],
+  "category": "developer-tools",
+  "tags": ["memory", "agent", "learning"],
+  "hooks": "./hooks/hooks.json",
+  "mcpServers": "./mcp.json"
+}
