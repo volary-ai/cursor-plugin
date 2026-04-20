@@ -8,7 +8,7 @@
   },
   "homepage": "https://volary.ai",
   "repository": "https://github.com/volary-ai/cursor",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "keywords": ["volary", "memory", "reflections", "transcripts"],
   "category": "developer-tools",
   "tags": ["memory", "agent", "learning"],
