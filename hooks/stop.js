@@ -76,6 +76,8 @@ async function main() {
     const text = await resp.text();
     throw new Error(`POST failed (${resp.status}): ${text.slice(0, 200)}`);
   }
+  // The hook is expected to return a JSON object. We don't need to populate anything in it.
+  console.log("{}");
 }
 
 main().catch((err) => {
