@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 //
-// Cursor sessionEnd hook — reads the agent transcript and posts it to
+// Cursor stop hook — reads the agent transcript and posts it to
 // Volary's messages transcript endpoint.
 //
 // Cursor's JSONL format wraps content in a "message" envelope:
@@ -10,7 +10,7 @@
 // so we just unwrap the envelope before posting.
 //
 // Cursor invokes this as:
-//   echo '<sessionEnd JSON>' | node hook/session-end.js
+//   echo '<stop JSON>' | node hook/stop.js
 //
 // Configuration (env vars or .cursor/volary.json):
 //   VOLARY_API_URL   — Volary API base URL (e.g. https://api.volary.ai)
@@ -26,7 +26,7 @@ import { loadConfig, requireConfig } from "../lib/config.js";
 // ---------------------------------------------------------------------------
 
 async function main() {
-  // 1. Read sessionEnd payload from stdin.
+  // 1. Read stop payload from stdin.
   const stdin = fs.readFileSync(0, "utf-8");
   const session = JSON.parse(stdin);
 
@@ -59,7 +59,6 @@ async function main() {
   const body = {
     messages,
     conversation_id: session.conversation_id || session.session_id || "",
-    duration_ms: session.duration_ms || 0,
     model: session.model || "",
     source: "cursor",
   };

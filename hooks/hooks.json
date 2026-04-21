@@ -6,9 +6,9 @@
         "command": "node ${CURSOR_PLUGIN_ROOT}/hooks/session-start.js"
       }
     ],
-    "sessionEnd": [
+    "stop": [
       {
-        "command": "node ${CURSOR_PLUGIN_ROOT}/hooks/session-end.js"
+        "command": "node ${CURSOR_PLUGIN_ROOT}/hooks/stop.js"
       }
     ]
   }

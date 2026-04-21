@@ -28,7 +28,7 @@ Then start (or restart) Cursor.
 
 ## Configuration
 
-All three integrations (session-start hook, session-end hook, and MCP proxy) share the same config loader. Values resolve in this order (first non-empty wins per field):
+All three integrations (session-start hook, stop hook, and MCP proxy) share the same config loader. Values resolve in this order (first non-empty wins per field):
 
 1. Environment variables: `VOLARY_ORG_ID`, `VOLARY_AGENT_ID`, `VOLARY_TOKEN`
 2. Project config at `<workspace>/.cursor/volary.json`
