@@ -30,12 +30,7 @@ async function main() {
   const stdin = fs.readFileSync(0, "utf-8");
   const session = JSON.parse(stdin);
 
-  // 2. Skip non-completed sessions.
-  if (session.reason && session.reason !== "completed") {
-    return;
-  }
-
-  // 3. Read transcript file.
+  // 2. Read transcript file.
   const transcriptPath = session.transcript_path;
   if (!transcriptPath) {
     throw new Error("no transcript_path in session payload");
@@ -51,13 +46,13 @@ async function main() {
     return;
   }
 
-  // 4. Unwrap Cursor's "message" envelope to get Anthropic-style messages.
+  // 3. Unwrap Cursor's "message" envelope to get Anthropic-style messages.
   const messages = entries.map((entry) => ({
     role: entry.role,
     content: entry.message?.content ?? [],
   }));
 
-  // 5. Load config and post.
+  // 4. Load config and post.
   const config = requireConfig(loadConfig());
 
   const url = `${config.apiUrl}/v0/orgs/${config.orgId}/agents/${config.agentId}/transcripts/messages`;
