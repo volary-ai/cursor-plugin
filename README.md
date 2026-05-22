@@ -28,7 +28,7 @@ Then start (or restart) Cursor.
 
 ## Configuration
 
-All three integrations (session-start hook, stop hook, and MCP proxy) share the same config loader. Values resolve in this order (first non-empty wins per field):
+The hook scripts share a config loader. Values resolve in this order (first non-empty wins per field):
 
 1. Environment variables: `VOLARY_ORG_ID`, `VOLARY_AGENT_ID`, `VOLARY_TOKEN`
 2. Project config at `<workspace>/.cursor/volary.json`
@@ -49,6 +49,8 @@ Configure the user config like so:
 
 ## Verifying it works
 
-Start a new Cursor session in a configured project. You should see a memory index appear in the agent's initial context (expand the system message to inspect). The `volary` MCP server should show up green in Cursor's MCP panel with four tools listed. After finishing the session, check your agent's reflections page in the Volary UI - new reflections should appear shortly after the session ends.
+Start a new Cursor session in a configured project. You should see a memory index appear in the agent's initial context (expand the system message to inspect). The `volary` MCP server should show up green in Cursor's MCP panel with several tools listed. After finishing the session, check your agent's reflections page in the Volary UI - new reflections should appear shortly after the session ends.
+
+You may need to authenticate the MCP server - check it in Cursor's MCP tools. It should prompt for it and open a browser window to authenticate via OAuth, asking you to choose the agent that it will use.
 
 If something goes wrong, both the hooks and the MCP proxy log to stderr. Hook errors surface in Cursor's output panel; MCP proxy errors surface in Cursor's MCP server panel. A common one is `missing config: token` when no configuration has been provided.
