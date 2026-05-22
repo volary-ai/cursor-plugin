@@ -2,7 +2,7 @@
   "mcpServers": {
     "volary": {
       "type": "http",
-      "url": "https://dev-api.volary.ai/v0/mcp"
+      "url": "https://api.volary.ai/v0/mcp"
     }
   }
 }
