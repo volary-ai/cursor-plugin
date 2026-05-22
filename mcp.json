@@ -1,8 +1,8 @@
 {
   "mcpServers": {
     "volary": {
-      "command": "node",
-      "args": ["${CURSOR_PLUGIN_ROOT}/mcp/proxy.js"]
+      "type": "http",
+      "url": "https://dev-api.volary.ai/v0/mcp"
     }
   }
 }
